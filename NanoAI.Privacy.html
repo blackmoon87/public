@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano AI – Privacy Policy</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        header img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.12);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #4ade80;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin: 36px 0 12px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        ul li {
+            color: #94a3b8;
+            font-size: 15px;
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        .card p { margin: 0; }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            color: #475569;
+            font-size: 13px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div>
+            <h1>Nano AI</h1>
+            <p>Chrome Extension – Privacy Policy</p>
+        </div>
+    </header>
+
+    <div class="badge">🔒 Zero Data Collection</div>
+
+    <p>
+        This Privacy Policy describes how <strong>Nano AI</strong> ("the Extension") handles user information.
+        By installing and using Nano AI, you agree to the terms described in this policy.
+    </p>
+
+    <p><strong>Effective date:</strong> May 2025 &nbsp;·&nbsp; <strong>Last updated:</strong> May 2025</p>
+
+    <h2>1. What Data We Collect</h2>
+    <div class="card">
+        <p><strong>We collect absolutely no user data.</strong> Nano AI does not collect, store, transmit, or share any personal information, usage data, analytics, or any other data about you or your activity.</p>
+    </div>
+
+    <h2>2. How the Extension Works</h2>
+    <p>Nano AI uses Chrome's built-in Prompt API to run <strong>Google's Gemini Nano model entirely on your local device</strong>. This means:</p>
+    <ul>
+        <li>All AI processing happens on your machine — no internet connection is required after the initial model download.</li>
+        <li>Your chat messages are never sent to any external server.</li>
+        <li>Page content accessed via "Read Page" or "Summarize Page" is processed locally and never leaves your device.</li>
+        <li>No conversations or history are uploaded anywhere.</li>
+    </ul>
+
+    <h2>3. Permissions Used</h2>
+    <p>The Extension requests the following permissions for the sole purpose of its core features:</p>
+    <ul>
+        <li><strong>storage</strong> — Saves local UI preferences on your device only.</li>
+        <li><strong>activeTab</strong> — Reads the visible text of a tab only when you explicitly click "Read Page" or "Summarize Page".</li>
+        <li><strong>scripting</strong> — Injects a script to extract page text locally when you request page reading. No data is transmitted.</li>
+    </ul>
+
+    <h2>4. Third-Party Services</h2>
+    <p>Nano AI does not integrate with, communicate with, or share data with any third-party services, analytics platforms, or advertising networks.</p>
+
+    <h2>5. Data Security</h2>
+    <p>Since no user data is collected or transmitted, there is no risk of a data breach from our side. All AI computation occurs within the Chrome browser on your local hardware.</p>
+
+    <h2>6. Children's Privacy</h2>
+    <p>Nano AI does not knowingly collect any information from anyone, including children under 13 years of age.</p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>If this policy is updated, the new version will be posted at this URL with an updated effective date. Continued use of the Extension after changes constitutes acceptance of the new policy.</p>
+
+    <h2>8. Contact</h2>
+    <p>If you have any questions about this Privacy Policy, you may open an issue on the extension's GitHub repository.</p>
+
+    <footer>
+        <p>© 2025 Nano AI · All AI processing is 100% local · No data ever leaves your device.</p>
+    </footer>
+
+</div>
+</body>
+</html>
