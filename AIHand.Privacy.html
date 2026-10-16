@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Hand — Privacy Policy</title>
+<style>
+:root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --line:rgba(255,255,255,0.08); --accent:#6366f1; --accent-light:#818cf8; --success:#22c55e; }
+@media (prefers-color-scheme: light) { :root { --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0; --accent:#4f46e5; --accent-light:#6366f1; --success:#16a34a; } }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; }
+main { max-width:760px; margin:0 auto; padding:48px 20px 80px; }
+header { margin-bottom:36px; padding-bottom:24px; border-bottom:1px solid var(--line); }
+h1 { font-size:30px; font-weight:700; margin:0 0 10px; background:linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+h2 { font-size:20px; font-weight:600; margin:36px 0 12px; color:var(--text); }
+p, li { color:var(--text); font-size:15px; }
+em { color:var(--muted); font-style:normal; font-size:14px; }
+a { color:var(--accent-light); text-decoration:none; }
+a:hover { text-decoration:underline; }
+code { font-size:13.5px; background:rgba(99,102,241,0.15); color:var(--accent-light); padding:2px 6px; border-radius:4px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+.badge { display:inline-block; background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.3); color:var(--success); font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:24px; }
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14.5px; }
+th, td { text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--line); }
+th { color:var(--muted); font-weight:600; }
+ul { padding-left:20px; margin:12px 0; }
+li { margin-bottom:8px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:20px 0; }
+</style>
+</head>
+<body><main>
+<header>
+<span class="badge">Active Policy</span>
+<h1>AI Hand — Browser Agent</h1>
+<p><em>Privacy Policy &bull; Last updated: October 16, 2026</em></p>
+</header>
+
+<p><strong>AI Hand — Browser Agent</strong> is an autonomous, open browser agent extension designed to assist users with web navigation, reading, content summarization, DOM analysis, and interaction automation. This Privacy Policy outlines what information is processed, where it is stored, and how your privacy is protected.</p>
+
+<h2>The Short Version</h2>
+<div class="card">
+<ul>
+<li><strong>100% Local-First Architecture:</strong> All settings, API keys, prompt histories, and session configurations remain entirely on your local device.</li>
+<li><strong>Zero Analytics & Telemetry:</strong> We do not track, collect, record, profile, or sell your personal data or browsing activity.</li>
+<li><strong>Direct Provider Communication:</strong> When you execute AI queries, requests are sent directly from your browser to your chosen AI provider (e.g., Google Gemini, OpenAI, Anthropic, NVIDIA NIM, Groq, or local Ollama). The developer operates no intermediary relay servers.</li>
+<li><strong>Zero Remote Code:</strong> The extension is completely self-contained within the reviewed package; no external scripts or remote executables are injected or executed.</li>
+</ul>
+</div>
+
+<h2>What Data Is Processed and Why</h2>
+<table>
+<thead><tr><th>Data Type</th><th>When It Is Processed</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><strong>Page Content & DOM Structure</strong></td><td>Only when you explicitly click a quick action (e.g. <em>Summarize Page</em>, <em>Inspect DOM</em>) or send an interactive prompt</td><td>Extracted to provide the requested summary, data table, or navigational action.</td></tr>
+<tr><td><strong>API Credentials</strong></td><td>Stored encrypted/locally in your browser</td><td>Used exclusively to authenticate requests to your configured AI provider.</td></tr>
+<tr><td><strong>Session History</strong></td><td>During active chat interactions</td><td>Maintained locally in Chrome storage so you can review prior conversations and undo actions.</td></tr>
+</tbody>
+</table>
+
+<h2>Browser Permissions Utilized</h2>
+<ul>
+<li><code>sidePanel</code>: Houses the companion conversational agent interface alongside your active tab.</li>
+<li><code>storage</code>: Stores your provider configurations, model preferences, and session data locally on your computer.</li>
+<li><code>tabs</code> &amp; <code>scripting</code>: Accesses the active tab title and visible DOM content only upon explicit user invocation.</li>
+<li><code>debugger</code>: Leverages the Chrome DevTools Protocol (CDP) for high-precision clicks, synthetic keystrokes, and accessibility node inspections.</li>
+<li><code>alarms</code>: Coordinates background task heartbeats and scheduled keep-alives.</li>
+<li><code>downloads</code>: Enables local file export of user-requested summaries, CSVs, or session archives.</li>
+<li><strong>Host Permissions</strong>: Enables interaction on websites explicitly visited and commanded by the user.</li>
+</ul>
+
+<h2>Data Storage and Retention</h2>
+<p>All data is maintained locally in Chrome extension storage (<code>chrome.storage.local</code>). Uninstalling the extension permanently purges all associated local data and configurations from your machine.</p>
+
+<h2>Data Selling & Third-Party Sharing</h2>
+<p>We strictly commit to the following principles:</p>
+<ul>
+<li>We do not sell, rent, monetize, or transfer user data to third parties.</li>
+<li>We do not utilize user data for creditworthiness assessments, personalized advertising, or lending purposes.</li>
+<li>We do not use or transfer user data for purposes unrelated to the extension's core single purpose.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>If you have any questions or feedback regarding this Privacy Policy, please contact the developer at <a href="mailto:blackmoon@mail.com">blackmoon@mail.com</a>.</p>
+</main></body>
+</html>
