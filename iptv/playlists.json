@@ -1,37 +1,4 @@
 {
   "version": 1,
-  "playlists": [
-    {
-      "id": "us",
-      "code": "US",
-      "name": "United States",
-      "description": "General US broadcast channels",
-      "imgUrl": "https://flagcdn.com/w320/us.png",
-      "url": "https://iptv-org.github.io/iptv/countries/us.m3u"
-    },
-    {
-      "id": "uk",
-      "code": "UK",
-      "name": "United Kingdom",
-      "description": "UK broadcast & entertainment",
-      "imgUrl": "https://flagcdn.com/w320/gb.png",
-      "url": "https://iptv-org.github.io/iptv/countries/uk.m3u"
-    },
-    {
-      "id": "news",
-      "code": "NEWS",
-      "name": "Global News",
-      "description": "24/7 International news networks",
-      "imgUrl": "https://placehold.co/320x180/1e3a8a/ffffff.png",
-      "url": "https://iptv-org.github.io/iptv/categories/news.m3u"
-    },
-    {
-      "id": "sports",
-      "code": "SPORT",
-      "name": "Live Sports",
-      "description": "Worldwide sports broadcasts",
-      "imgUrl": "https://placehold.co/320x180/065f46/ffffff.png",
-      "url": "https://iptv-org.github.io/iptv/categories/sports.m3u"
-    }
-  ]
+  "playlists": []
 }
