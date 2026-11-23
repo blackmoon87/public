@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APK Downloads — blackmoon87/public</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-text: #ffffff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0b1120;
+        --surface: #111827;
+        --surface-subtle: #1e293b;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #293548;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --accent-text: #ffffff;
+        --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-subtle: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #293548;
+      --accent: #3b82f6;
+      --accent-hover: #60a5fa;
+      --accent-text: #ffffff;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 1.95rem);
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0.25rem 0 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .theme-btn {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .theme-btn:hover {
+      background: var(--surface-subtle);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .file-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .file-name {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--surface-subtle);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .meta-item {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.9rem;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hash-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.9rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .hash-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.82rem;
+      word-break: break-all;
+      color: var(--text);
+    }
+
+    .copy-btn {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      background: var(--bg);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: var(--accent-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-subtle);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg);
+    }
+
+    footer {
+      margin-top: 1.75rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1>APK Downloads</h1>
+        <p class="subtitle">Direct Android package downloads from <code>blackmoon87/public</code></p>
+      </div>
+      <button type="button" class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Toggle Theme</button>
+    </header>
+
+    <section class="card" aria-labelledby="apk-title">
+      <div class="file-header">
+        <h2 class="file-name" id="apk-title">instagram-458-0-0-0-45.apk</h2>
+        <span class="badge">Android APK</span>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">File Size</span>
+          <span class="meta-value">158.6 MB (166,307,643 bytes)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Hosting</span>
+          <span class="meta-value">GitHub Releases (Direct)</span>
+        </div>
+      </div>
+
+      <div class="hash-box">
+        <span class="meta-label">SHA-256 Checksum</span>
+        <div class="hash-row">
+          <code id="sha256">457235ef1bb8012e1e7cf822c463ecaa2de901cb4f5d2e77f292881a72a41119</code>
+          <button type="button" class="copy-btn" id="copyHash">Copy</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a
+          class="btn-primary"
+          href="https://github.com/blackmoon87/public/releases/download/apk/instagram-458-0-0-0-45.apk"
+          download="instagram-458-0-0-0-45.apk"
+        >Download APK (158.6 MB)</a>
+        <a
+          class="btn-secondary"
+          href="https://github.com/blackmoon87/public/releases/tag/apk"
+          rel="noopener noreferrer"
+        >View GitHub Release</a>
+      </div>
+    </section>
+
+    <footer>
+      Repository: <a href="https://github.com/blackmoon87/public" rel="noopener noreferrer">github.com/blackmoon87/public</a>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById("themeToggle");
+      toggle.addEventListener("click", function () {
+        var dark = root.getAttribute("data-theme") === "dark" ||
+          (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        root.setAttribute("data-theme", dark ? "light" : "dark");
+      });
+
+      var copyBtn = document.getElementById("copyHash");
+      var hashEl = document.getElementById("sha256");
+      copyBtn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(hashEl.textContent).then(function () {
+            copyBtn.textContent = "Copied";
+            setTimeout(function () { copyBtn.textContent = "Copy"; }, 1800);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
